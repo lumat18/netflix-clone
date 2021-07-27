@@ -17,6 +17,8 @@ export const Item = styled.div`
   color: white;
   margin-bottom: 10px;
   max-width: 670px;
+  margin: auto;
+  width: 100%;
 
   &:first-of-type {
     margin-top: 3em;
@@ -27,7 +29,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   font-size: 26px;
   font-weight: normal;
   background: #303030;
