@@ -4,7 +4,9 @@ import { Inner, Item, Container, Pane, Title, SubTitle, Image } from './styles/j
 export default function Jumbotron({ children, direction = 'row', ...restProps }) {
   return (
     <Item {...restProps}>
-      <Inner direction={direction}>{children}</Inner>
+      <Inner direction={direction} data-testid="jumbo-inner">
+        {children}
+      </Inner>
     </Item>
   );
 }
