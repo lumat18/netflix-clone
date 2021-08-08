@@ -13,7 +13,7 @@ describe('Profiles', () => {
         <Profiles.Title>Who's watching?</Profiles.Title>
         <Profiles.List>
           <Profiles.Item onClick={() => {}}>
-            <Profiles.Picture src={user.photoURL} data-testid="profile-picture" />
+            <Profiles.Picture src={user.photoUrl} data-testid="profile-picture" />
             <Profiles.Name>{user.displayName}</Profiles.Name>
           </Profiles.Item>
         </Profiles.List>
@@ -22,6 +22,7 @@ describe('Profiles', () => {
 
     expect(getByText(user.displayName)).toBeTruthy();
     expect(getByTestId('profile-picture')).toBeTruthy();
+    expect(getByTestId('profile-picture').src).toEqual(expect.stringContaining(user.photoUrl));
     expect(getByText("Who's watching?")).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });

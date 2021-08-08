@@ -30,6 +30,19 @@ describe('Jumbotron', () => {
       getByText('Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.')
     ).toBeTruthy();
     expect(getAllByTestId('jumbo-inner')[1]).toHaveStyle('flex-direction: row-reverse');
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should render <Jumbotron /> with direction row by default', () => {
+    const { container, getByTestId } = render(
+      <Jumbotron.Container>
+        <Jumbotron />
+      </Jumbotron.Container>
+    );
+
+    expect(getByTestId('jumbo-inner')).toHaveStyle('flex-direction: row');
+
     expect(container.firstChild).toMatchSnapshot();
   });
 });
